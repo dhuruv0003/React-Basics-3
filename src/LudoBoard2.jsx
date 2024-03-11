@@ -15,31 +15,33 @@ export default function Ludoboard2() {
 
 
 
-    // let handleblue = () => {
-    //     setMoves((bluemove) => {
-    //         return { ...bluemove, blue: bluemove.blue + 1 }
-    //     });
-    // }
+    let handleblue = () => {
+        setMoves((newmove) => {
+            return { ...newmove, blue: newmove.blue + 1 }
+        });
+    }
     // Expectations:=>  Above (bluemoves) should refer to object in moves and update their value i.e moves.blue by 1
     // But in reality Nothing happens. Because in JS when we update any value in an object then only value changes. But there is no change in address of object.
     // We know that useState() works or re-renders only if there is change in object.
     //Now to do so when there is a change in value of object, we will copy it into another object by using ...operator is spread operator.
 
     //we can aslo write as folloes
+    // passing updated object inside setmoves
 
-    let handleblue = () => {
-        setMoves({ ...moves, blue: moves.blue + 1 });
-    };
-
+    
     let handleyellow = () => {
         setMoves({ ...moves, yellow: moves.yellow + 1 });
     };
-    let handlered = () => {
-        setMoves({ ...moves, red: moves.red + 1 });
-    };
-    let handlegreen = () => {
-        setMoves({ ...moves, green: moves.green+ 1 });
-    };
+    
+    let handlered=()=>{
+        setMoves((redmove)=>{
+            return {...redmove, red:redmove.red+1}
+        })
+    }
+
+    let handlegreen=()=>{
+        setMoves({...moves,green:moves.green+1})
+    }
 
 
     return (
